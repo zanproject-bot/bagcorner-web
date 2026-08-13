@@ -1,7 +1,7 @@
 [build]
 
 command="bun run build"
-publish="dist/"
+publish="dist"
 
 \[build.environment\]
 NODE\_VERSION="20"
