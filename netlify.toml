@@ -1,0 +1,8 @@
+[build]
+
+command="bun run build"
+publish="dist/client"
+
+\[build.environment\]
+NODE\_VERSION="20"
+BUN\_VERSION="latest"
