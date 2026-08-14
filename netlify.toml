@@ -2,6 +2,6 @@
   command = "npm run build"
   publish = "dist"
 
-\[build.environment\]
-NODE\_VERSION="20"
-BUN\_VERSION="latest"
+[build.environment]
+NODE_VERSION="20"
+BUN_VERSION="latest"
