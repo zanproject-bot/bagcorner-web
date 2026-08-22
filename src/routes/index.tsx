@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router"; // Tambahan: Import Link
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
 import { ArrowRight, Play, Search, MessageCircle } from "lucide-react";
 import { CylindricalCarousel } from "@/components/CylindricalCarousel";
@@ -51,17 +51,18 @@ function Home() {
       </div>
       
       <div className="relative z-10">
-        {/* PERBAIKAN: Header dibuat sticky, transparan (bg-transparent), dan diberi blur sedikit agar teks tetap terbaca */}
+        {/* Header */}
         <header className="sticky top-0 z-50 max-w-7xl mx-auto px-6 lg:px-10 pt-6 lg:pt-8 pb-4 flex items-center justify-between bg-transparent backdrop-blur-sm">
           <Link to="/" className="text-2xl lg:text-3xl font-display font-semibold tracking-tight">
             Bag Corner<span className="text-primary">.</span>
           </Link>
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
             <a href="#belanja" className="hover:text-primary transition">BELANJA</a>
-            {/* PERBAIKAN: Menggunakan Link dari TanStack Router agar pindah halaman */}
+            {/* Terhubung ke tentang.tsx */}
             <Link to="/tentang" className="hover:text-primary transition">TENTANG</Link>
             <a href="#koleksi" className="hover:text-primary transition">KOLEKSI</a>
-            <a href="#blog" className="hover:text-primary transition">BLOG</a>
+            {/* Ganti Blog menjadi Info-Payment dan terhubung ke payment-info.tsx */}
+            <Link to="/payment-info" className="hover:text-primary transition">INFO-PAYMENT</Link>
             <a href="#kontak" className="hover:text-primary transition">KONTAK</a>
           </nav>
           <button aria-label="Cari" className="flex items-center gap-2 text-sm font-medium hover:text-primary transition">
@@ -268,10 +269,10 @@ function Home() {
               <div className="font-semibold mb-3">Menu</div>
               <ul className="space-y-2 text-muted-foreground">
                 <li><a href="#belanja" className="hover:text-foreground transition">Belanja</a></li>
-                {/* PERBAIKAN: Menggunakan Link TanStack Router di footer juga */}
                 <li><Link to="/tentang" className="hover:text-foreground transition">Tentang</Link></li>
                 <li><a href="#koleksi" className="hover:text-foreground transition">Koleksi</a></li>
-                <li><a href="#blog" className="hover:text-foreground transition">Blog</a></li>
+                {/* Ganti Blog menjadi Info-Payment di footer juga */}
+                <li><Link to="/payment-info" className="hover:text-foreground transition">Info-Payment</Link></li>
               </ul>
             </div>
             <div className="text-sm">
