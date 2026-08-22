@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef } from "react";
 
 export const Route = createFileRoute("/tentang")({
@@ -166,14 +166,14 @@ function TentangPage() {
       <div className="relative z-10">
         {/* Header / Navbar */}
         <header className="bg-[#0A0A0A]/80 backdrop-blur-md border-b border-white/10 sticky top-0 z-50 px-6 md:px-12 py-5 flex justify-between items-center">
-          <div className="text-xl md:text-2xl font-bold tracking-tight">
+          <Link to="/" className="text-xl md:text-2xl font-bold tracking-tight cursor-pointer">
             Bag Corner<span className="text-[#e07a3c]">.</span>
-          </div>
+          </Link>
           <nav className="hidden md:flex gap-8 text-sm text-[#999] font-medium">
-            <a href="/" className="hover:text-[#e07a3c] transition">BERANDA</a>
-            <a href="/tentang" className="text-[#e07a3c]">TENTANG</a>
-            <a href="#" className="hover:text-[#e07a3c] transition">PRODUK</a>
-            <a href="#" className="hover:text-[#e07a3c] transition">KONTAK</a>
+            <Link to="/" className="hover:text-[#e07a3c] transition">BERANDA</Link>
+            <Link to="/tentang" className="text-[#e07a3c]">TENTANG</Link>
+            {/* Menu Produk dan Kontak dihapus di sini */}
+            <Link to="/payment-info" className="hover:text-[#e07a3c] transition">INFO-PAYMENT</Link>
           </nav>
         </header>
 
