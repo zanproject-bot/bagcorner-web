@@ -18,6 +18,9 @@ const WA_NUMBER = "6281774977770";
 const waLink = (product: string) =>
   `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(`Halo Bag Corner, saya tertarik dengan ${product}. Mohon info lebih lanjut.`)}`;
 
+// Link Google Drive untuk Koleksi
+const GDRIVE_KOLEKSI_LINK = "https://drive.google.com/drive/folders/1eA7n8PO9nZLzdtiJSHogCSr5rnwdt8Pi?usp=sharing";
+
 const carouselItems = [
   { id: "1", name: "Ransel Sunrise", color: "Kuning", tag: "Best Seller", tagColor: "bg-amber-500/20 text-amber-300 border-amber-500/20", image: bagYellow },
   { id: "2", name: "Ransel Ember", color: "Merah", tag: "New Arrival", tagColor: "bg-rose-500/20 text-rose-300 border-rose-500/20", image: bagRed },
@@ -57,11 +60,10 @@ function Home() {
             Bag Corner<span className="text-primary">.</span>
           </Link>
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
-            <a href="#belanja" className="hover:text-primary transition">BELANJA</a>
-            {/* Terhubung ke tentang.tsx */}
+            {/* Menu Belanja dihapus */}
             <Link to="/tentang" className="hover:text-primary transition">TENTANG</Link>
-            <a href="#koleksi" className="hover:text-primary transition">KOLEKSI</a>
-            {/* Ganti Blog menjadi Info-Payment dan terhubung ke payment-info.tsx */}
+            {/* Menu Koleksi diarahkan ke Google Drive */}
+            <a href={GDRIVE_KOLEKSI_LINK} target="_blank" rel="noreferrer" className="hover:text-primary transition">KOLEKSI</a>
             <Link to="/payment-info" className="hover:text-primary transition">INFO-PAYMENT</Link>
             <a href="#kontak" className="hover:text-primary transition">KONTAK</a>
           </nav>
@@ -268,10 +270,10 @@ function Home() {
             <div className="text-sm">
               <div className="font-semibold mb-3">Menu</div>
               <ul className="space-y-2 text-muted-foreground">
-                <li><a href="#belanja" className="hover:text-foreground transition">Belanja</a></li>
+                {/* Menu Belanja dihapus di footer */}
                 <li><Link to="/tentang" className="hover:text-foreground transition">Tentang</Link></li>
-                <li><a href="#koleksi" className="hover:text-foreground transition">Koleksi</a></li>
-                {/* Ganti Blog menjadi Info-Payment di footer juga */}
+                {/* Menu Koleksi diarahkan ke Google Drive di footer */}
+                <li><a href={GDRIVE_KOLEKSI_LINK} target="_blank" rel="noreferrer" className="hover:text-foreground transition">Koleksi</a></li>
                 <li><Link to="/payment-info" className="hover:text-foreground transition">Info-Payment</Link></li>
               </ul>
             </div>
