@@ -36,7 +36,7 @@ function TentangPage() {
   return (
     <>
       <header>
-        <div className="logo">Bag Corner Ponorogo</div>
+        <div className="logo">Bag Corner Ponorago</div>
         <nav>
           {/* Menggunakan Link dari TanStack Router agar pindah halaman tanpa reload */}
           <Link to="/">Beranda</Link>
@@ -67,4 +67,12 @@ function TentangPage() {
             </p>
             <br />
             <p>
-              Kami percaya bahwa tas bukan sekadar wadah bawaan, melainkan <strong>bagian dari identitas gay
+              {/* PERBAIKAN: Menutup tag strong dan p di bagian bawah ini */}
+              Kami percaya bahwa tas bukan sekadar wadah bawaan, melainkan <strong>bagian dari identitas gaya hidup Anda.</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
