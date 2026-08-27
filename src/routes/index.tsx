@@ -58,7 +58,7 @@ function Home() {
         {/* Header */}
         <header className="sticky top-0 z-50 max-w-7xl mx-auto px-6 lg:px-10 pt-6 lg:pt-8 pb-4 flex items-center justify-between bg-transparent backdrop-blur-sm">
           <Link to="/" className="text-2xl lg:text-3xl font-display font-semibold tracking-tight flex items-center gap-2">
-            <img src={logobag} alt="Bag Corner logo" className="inline-block w-6 h-6 lg:w-8 lg:h-8 object-contain" />
+            <img src={logobag} alt="Bag Corner logo" className="inline-block w-9 h-9 lg:w-12 lg:h-12 object-contain" />
             <span>Bag Corner</span>
           </Link>
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">

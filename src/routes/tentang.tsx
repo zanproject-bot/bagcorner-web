@@ -168,7 +168,7 @@ function TentangPage() {
         {/* Header / Navbar */}
         <header className="bg-[#0A0A0A]/80 backdrop-blur-md border-b border-white/10 sticky top-0 z-50 px-6 md:px-12 py-5 flex justify-between items-center">
           <Link to="/" className="text-xl md:text-2xl font-bold tracking-tight cursor-pointer flex items-center gap-2">
-            <img src={logobag} alt="Bag Corner logo" className="inline-block w-6 h-6 md:w-7 md:h-7 object-contain" />
+            <img src={logobag} alt="Bag Corner logo" className="inline-block w-9 h-9 md:w-10 md:h-10 object-contain" />
             <span>Bag Corner</span>
           </Link>
           <nav className="hidden md:flex gap-8 text-sm text-[#999] font-medium">

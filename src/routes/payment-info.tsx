@@ -163,7 +163,7 @@ function PaymentInfoPage() {
             Kembali ke Beranda
           </Link>
           <div className="text-lg md:text-xl font-bold tracking-tight flex items-center gap-2">
-            <img src={logobag} alt="Bag Corner logo" className="inline-block w-6 h-6 md:w-7 md:h-7 object-contain" />
+            <img src={logobag} alt="Bag Corner logo" className="inline-block w-9 h-9 md:w-10 md:h-10 object-contain" />
             <span>Bag Corner</span>
           </div>
         </header>
