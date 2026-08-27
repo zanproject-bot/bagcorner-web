@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useState, useEffect, useRef } from 'react'
 import { ArrowLeft } from 'lucide-react' // Tambahan: Import icon panah kiri
+import logobag from '@/assets/logobag.svg'
 
 // Definisi Route untuk TanStack Router File-Based
 export const Route = createFileRoute('/payment-info')({
@@ -161,8 +162,9 @@ function PaymentInfoPage() {
             <ArrowLeft className="w-4 h-4" />
             Kembali ke Beranda
           </Link>
-          <div className="text-lg md:text-xl font-bold tracking-tight">
-            Bag Corner<span className="text-[#e07a3c]">.</span>
+          <div className="text-lg md:text-xl font-bold tracking-tight flex items-center gap-2">
+            <img src={logobag} alt="Bag Corner logo" className="inline-block w-6 h-6 md:w-7 md:h-7 object-contain" />
+            <span>Bag Corner</span>
           </div>
         </header>
 
