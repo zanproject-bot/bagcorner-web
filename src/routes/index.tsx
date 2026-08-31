@@ -16,7 +16,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { name: "title", content: "Bag Corner — Toko Tas Terlengkap, koper, Jasa Perbaikan Tas & Koper Ponorogo" },
-      { name: "description", content: "Toko Tas Bag Corner segala macam tas ransel,tas pesta, tas sekolah anak, tas korea, tas pesta, dompet, koper dan jasa perbaikan tas dan koper profesional di Ponorogo. Ganti roda, resleting, kunci, troly koper. Layanan berkualitas dengan harga terjangkau." },
+      { name: "description", content: "Toko Tas Bag Corner segala macam tas ransel,tas pesta, tas sekolah anak, tas korea, tas pesta, dompet, koper dan jasa perbaikan tas dan koper profesional di Ponorogo." },
       { name: "og:title", content: "Bag Corner — Toko Tas Terlengkap, koper, Jasa Perbaikan Tas & Koper Ponorogo" },
       { name: "og:description", content: "Toko Tas Bag Corner segala macam tas ransel,tas pesta, tas sekolah anak, tas korea, tas pesta, dompet, koper. Ganti roda, resleting, kunci koper dengan cepat dan terpercaya." },
     ],
@@ -69,8 +69,8 @@ const SERVICES = [
 
 // Google Maps embed link - Updated
 const GOOGLE_MAPS_LINK = "https://maps.app.goo.gl/jffJ6wykwn2nfo3T6";
-// Use a direct Google Maps embed URL (coordinates for Jalan Urip Sumoharjo 66, Ponorogo)
-const GOOGLE_MAPS_EMBED = "https://www.google.com/maps?q=-7.8738299,111.4613009&z=17&output=embed";
+export const GOOGLE_MAPS_EMBED = 
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.128795092928!2d111.46467007575306!3d-7.881622378381832!2m3!1f0!2f0!3f0!3m2!1i1024!2i708!4f13.1!3m3!1m2!1s0x2e799fdd4c8f334b%3A0xb35a0fb7ffed4cb8!2sBAG%20CORNER%20PONOROGO!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid";
 
 const carouselItems = [
   { id: "1", name: "Ransel Sunrise", color: "Kuning", tag: "Best Seller", tagColor: "bg-amber-500/20 text-amber-300 border-amber-500/20", image: bagYellow },
@@ -323,9 +323,6 @@ function Home() {
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688[...]" />
                           </svg>
                         ))}
-                        <svg className="w-3.5 h-3.5 text-muted-foreground/20" fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1[...]" />
-                        </svg>
                       </div>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed italic">
