@@ -15,10 +15,10 @@ export const Route = createFileRoute("/")({
   component: Home,
   head: () => ({
     meta: [
-      { name: "title", content: "Bag Corner — Jasa Perbaikan Tas & Koper Ponorogo" },
-      { name: "description", content: "Jasa perbaikan tas dan koper profesional di Ponorogo. Ganti roda, resleting, kunci, troly koper. Layanan berkualitas dengan harga terjangkau." },
-      { name: "og:title", content: "Bag Corner — Jasa Perbaikan Tas & Koper Ponorogo" },
-      { name: "og:description", content: "Layanan perbaikan tas dan koper profesional di Ponorogo. Ganti roda, resleting, kunci koper dengan cepat dan terpercaya." },
+      { name: "title", content: "Bag Corner — Toko Tas Terlengkap, Jasa Perbaikan Tas & Koper Ponorogo" },
+      { name: "description", content: "Toko Tas Bag Corner hadir dengan pilihan gaya lifestyle tas-tas pilihan dengan kualitas terbaik siap menemani hari-harimu, dan jasa perbaikan tas dan koper profesional di Ponorogo. Ganti roda, resleting, kunci, troly koper. Layanan berkualitas dengan harga terjangkau." },
+      { name: "og:title", content: "Bag Corner — Toko Tas Terlengkap, Jasa Perbaikan Tas & Koper Ponorogo" },
+      { name: "og:description", content: "Toko Tas dan layanan perbaikan tas dan koper profesional di Ponorogo. Ganti roda, resleting, kunci koper dengan cepat dan terpercaya." },
     ],
   }),
 });
