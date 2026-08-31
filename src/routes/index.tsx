@@ -56,7 +56,7 @@ const SERVICES = [
   {
     id: "5",
     name: "Ganti Kunci Koper",
-    description: "Penggantian kunci koper yang hilang atau rusak",
+    description: "Penggantian kunci koper yang hilang , rusak ,  lupa pin",
     icon: "🔐",
   },
   {
@@ -442,7 +442,7 @@ function Home() {
                     <div>
                       <h3 className="font-semibold text-lg mb-2">Jam Operasional</h3>
                       <p className="text-muted-foreground text-sm">
-                        Senin - Minggu: 08:00 - 17:00<br />
+                        Senin - Minggu: 08:00 - 21:00<br />
                         Minggu: Buka Normal
                       </p>
                     </div>
