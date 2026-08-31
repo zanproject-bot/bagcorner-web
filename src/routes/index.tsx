@@ -15,10 +15,10 @@ export const Route = createFileRoute("/")({
   component: Home,
   head: () => ({
     meta: [
-      { name: "title", content: "Bag Corner — Toko Tas Terlengkap, Jasa Perbaikan Tas & Koper Ponorogo" },
-      { name: "description", content: "Toko Tas Bag Corner hadir dengan pilihan gaya lifestyle tas-tas pilihan dengan kualitas terbaik siap menemani hari-harimu, dan jasa perbaikan tas dan koper profesional di Ponorogo. Ganti roda, resleting, kunci, troly koper. Layanan berkualitas dengan harga terjangkau." },
-      { name: "og:title", content: "Bag Corner — Toko Tas Terlengkap, Jasa Perbaikan Tas & Koper Ponorogo" },
-      { name: "og:description", content: "Toko Tas dan layanan perbaikan tas dan koper profesional di Ponorogo. Ganti roda, resleting, kunci koper dengan cepat dan terpercaya." },
+      { name: "title", content: "Bag Corner — Toko Tas Terlengkap, koper, Jasa Perbaikan Tas & Koper Ponorogo" },
+      { name: "description", content: "Toko Tas Bag Corner segala macam tas ransel,tas pesta, tas sekolah anak, tas korea, tas pesta, dompet, koper dan jasa perbaikan tas dan koper profesional di Ponorogo. Ganti roda, resleting, kunci, troly koper. Layanan berkualitas dengan harga terjangkau." },
+      { name: "og:title", content: "Bag Corner — Toko Tas Terlengkap, koper, Jasa Perbaikan Tas & Koper Ponorogo" },
+      { name: "og:description", content: "Toko Tas Bag Corner segala macam tas ransel,tas pesta, tas sekolah anak, tas korea, tas pesta, dompet, koper. Ganti roda, resleting, kunci koper dengan cepat dan terpercaya." },
     ],
   }),
 });
@@ -135,7 +135,7 @@ function Home() {
               className="w-full max-w-lg h-[100px] flex items-start justify-start pt-4 pb-8 !text-white [text-shadow:0_0_10px_#fff,0_0_20px_#fff]"
             />
             <p className="mt-6 text-base lg:text-lg text-muted-foreground max-w-md leading-relaxed">
-              Jasa perbaikan tas dan koper profesional di Ponorogo. Kami menyediakan layanan perbaikan resleting, ganti roda koper, dan berbagai layanan perbaikan tas dengan kualitas terbaik.
+              Toko Tas Bag COrner hadir dengan berbagai pilihan gaya lifestye tas-tas, koper pilihan dengan kualitas terbaik siap menemani hari-harimu.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a
