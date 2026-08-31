@@ -70,8 +70,7 @@ const SERVICES = [
 // Google Maps embed link - Updated
 const GOOGLE_MAPS_LINK = "https://maps.app.goo.gl/jffJ6wykwn2nfo3T6";
 export const GOOGLE_MAPS_EMBED = 
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.128795092928!2d111.46467007575306!3d-7.881622378381832!2m3!1f0!2f0!3f0!3m2!1i1024!2i708!4f13.1!3m3!1m2!1s0x2e799fdd4c8f334b%3A0xb35a0fb7ffed4cb8!2sBAG%20CORNER%20PONOROGO!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid";
-
+"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.128795092928!2d111.46467007575306!3d-7.881622378381832!2m3!1f0!2f0!3f0!3m2!1i1024!2i708!4f13.1!3m3!1m2!1s0x2e799fdd4c8f334b%3A0xb35a0fb7ffed4cb8!2sBAG%20CORNER%20PONOROGO!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid";
 const carouselItems = [
   { id: "1", name: "Ransel Sunrise", color: "Kuning", tag: "Best Seller", tagColor: "bg-amber-500/20 text-amber-300 border-amber-500/20", image: bagYellow },
   { id: "2", name: "Ransel Ember", color: "Merah", tag: "New Arrival", tagColor: "bg-rose-500/20 text-rose-300 border-rose-500/20", image: bagRed },
