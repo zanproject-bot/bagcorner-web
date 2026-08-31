@@ -68,8 +68,9 @@ const SERVICES = [
 ];
 
 // Google Maps embed link - Updated
-const GOOGLE_MAPS_LINK = "https://maps.app.goo.gl/2muC5AVtLXekoQo99";
-const GOOGLE_MAPS_EMBED = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.0829426847435!2d111.46130091531832!3d-7.8738298940899175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78[...]";
+const GOOGLE_MAPS_LINK = "https://maps.app.goo.gl/jffJ6wykwn2nfo3T6";
+// Use a direct Google Maps embed URL (coordinates for Jalan Urip Sumoharjo 66, Ponorogo)
+const GOOGLE_MAPS_EMBED = "https://www.google.com/maps?q=-7.8738299,111.4613009&z=17&output=embed";
 
 const carouselItems = [
   { id: "1", name: "Ransel Sunrise", color: "Kuning", tag: "Best Seller", tagColor: "bg-amber-500/20 text-amber-300 border-amber-500/20", image: bagYellow },
@@ -253,7 +254,7 @@ function Home() {
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54[...]" />
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54[[...]" />
                     </svg>
                   ))}
                 </div>
