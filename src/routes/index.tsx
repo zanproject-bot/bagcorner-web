@@ -127,11 +127,11 @@ function Home() {
         <section className="max-w-7xl mx-auto px-6 lg:px-10 pt-10 lg:pt-16 grid lg:grid-cols-2 gap-10 items-center">
           <div key={animationKey} className="flex flex-col gap-0">
             <VapourTextEffect
-              text="Tunjukkan"
+              text="SHOW YOUR"
               className="w-full max-w-lg h-[100px] flex items-start justify-start pt-4 pb-8 !text-white [text-shadow:0_0_10px_#fff,0_0_20px_#fff]"
             />
             <VapourTextEffect
-              text="Gayamu."
+              text="STYLE"
               className="w-full max-w-lg h-[100px] flex items-start justify-start pt-4 pb-8 !text-white [text-shadow:0_0_10px_#fff,0_0_20px_#fff]"
             />
             <p className="mt-6 text-base lg:text-lg text-muted-foreground max-w-md leading-relaxed">
