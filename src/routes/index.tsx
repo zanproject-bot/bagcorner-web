@@ -135,7 +135,7 @@ function Home() {
               className="w-full max-w-lg h-[100px] flex items-start justify-start pt-4 pb-8 !text-white [text-shadow:0_0_10px_#fff,0_0_20px_#fff]"
             />
             <p className="mt-6 text-base lg:text-lg text-muted-foreground max-w-md leading-relaxed">
-              Toko Tas Bag Corner hadir dengan berbagai pilihan gaya lifestye tas dan koper pilihan dengan kualitas terbaik siap menemani hari-harimu.
+              Toko Tas Bag Corner hadirkan koleksi pilihan tas dan koper yang berkualitas untuk melengkapi gaya hidupmu setiap hari.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a
