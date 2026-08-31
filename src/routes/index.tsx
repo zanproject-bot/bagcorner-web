@@ -135,7 +135,7 @@ function Home() {
               className="w-full max-w-lg h-[100px] flex items-start justify-start pt-4 pb-8 !text-white [text-shadow:0_0_10px_#fff,0_0_20px_#fff]"
             />
             <p className="mt-6 text-base lg:text-lg text-muted-foreground max-w-md leading-relaxed">
-              Toko Tas Bag COrner hadir dengan berbagai pilihan gaya lifestye tas-tas, koper pilihan dengan kualitas terbaik siap menemani hari-harimu.
+              Toko Tas Bag Corner hadir dengan berbagai pilihan gaya lifestye tas dan koper pilihan dengan kualitas terbaik siap menemani hari-harimu.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a
@@ -181,7 +181,7 @@ function Home() {
               </span>
             </h2>
             <p className="text-muted-foreground text-base max-w-2xl mx-auto leading-relaxed">
-              Kami menyediakan berbagai layanan perbaikan tas dan koper dengan teknologi terkini dan pengalaman melayani pelanggan di Ponorogo dan sekitarnya.
+              Kami menyediakan berbagai layanan perbaikan tas dan koper dengan profesional dan pengalaman melayani pelanggan di Ponorogo dan sekitarnya.
             </p>
           </div>
 
@@ -198,7 +198,7 @@ function Home() {
                   className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition font-medium"
                 >
                   <MessageCircle className="w-4 h-4" />
-                  Tanya Harga
+                  Tanya Admin
                 </a>
               </div>
             ))}
