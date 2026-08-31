@@ -442,9 +442,8 @@ function Home() {
                     <div>
                       <h3 className="font-semibold text-lg mb-2">Jam Operasional</h3>
                       <p className="text-muted-foreground text-sm">
-                        Senin - Jumat: 08:00 - 17:00<br />
-                        Sabtu: 08:00 - 14:00<br />
-                        Minggu: Libur
+                        Senin - Minggu: 08:00 - 17:00<br />
+                        Minggu: Buka Normal
                       </p>
                     </div>
                   </div>
