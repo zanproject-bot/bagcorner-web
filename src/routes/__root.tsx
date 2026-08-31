@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { generateLocalBusinessSchema, generateServiceSchema, generateOrganizationSchema } from "../lib/seo-schema";
 
 function NotFoundComponent() {
   return (
@@ -77,21 +78,44 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Bag Corner — Tas Premium untuk Gaya Setiap Hari" },
-      { name: "description", content: "Toko Bag Corner: koleksi tas ransel premium dengan desain modern. Pesan langsung via WhatsApp." },
+      { name: "title", content: "Bag Corner — Jasa Perbaikan Tas & Koper Ponorogo" },
+      { name: "description", content: "Jasa perbaikan tas dan koper profesional di Ponorogo. Ganti roda, resleting, kunci, troly koper. Layanan berkualitas dengan harga terjangkau. Hubungi via WhatsApp." },
+      { name: "keywords", content: "perbaikan tas Ponorogo, ganti roda koper, jasa reparasi koper Ponorogo, ganti resleting tas, perbaikan troly koper" },
       { name: "author", content: "Bag Corner" },
-      { property: "og:title", content: "Bag Corner — Tas Premium untuk Gaya Setiap Hari" },
-      { property: "og:description", content: "Koleksi tas ransel premium. Pesan langsung via WhatsApp." },
-      { property: "og:type", content: "website" },
+      { name: "robots", content: "index, follow" },
+      { name: "language", content: "Indonesian" },
+      { name: "geo.placename", content: "Ponorogo, Jawa Timur, Indonesia" },
+      { name: "geo.region", content: "ID-JI" },
+      { property: "og:title", content: "Bag Corner — Jasa Perbaikan Tas & Koper Ponorogo" },
+      { property: "og:description", content: "Layanan perbaikan tas dan koper profesional di Ponorogo. Ganti roda, resleting, kunci koper dengan cepat dan terpercaya." },
+      { property: "og:type", content: "business.business" },
+      { property: "og:url", content: "https://bagcorner-web.vercel.app" },
+      { property: "og:image", content: "https://bagcorner-web.vercel.app/og-image.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Bag Corner — Jasa Perbaikan Tas & Koper Ponorogo" },
+      { name: "twitter:description", content: "Jasa perbaikan tas dan koper profesional. Hubungi kami via WhatsApp untuk konsultasi gratis." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      // Link di bawah sudah ditambahkan dengan Playfair Display dan Poppins
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "canonical", href: "https://bagcorner-web.vercel.app" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(generateLocalBusinessSchema()),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(generateServiceSchema()),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(generateOrganizationSchema()),
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -102,7 +126,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="id">
       <head>
         <HeadContent />
       </head>
