@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
-import { ArrowRight, Play, Search, MessageCircle } from "lucide-react";
+import { ArrowRight, Play, Search, MessageCircle, MapPin, Phone, Clock } from "lucide-react";
 import { CylindricalCarousel } from "@/components/CylindricalCarousel";
 import { Rotating3DBag } from "@/components/Rotating3DBag";
 import { VapourTextEffect } from "@/components/VapourTextEffect";
@@ -11,16 +11,65 @@ import bagRed from "@/assets/bag-red.jpg";
 import bagBlack from "@/assets/bag-black.jpg";
 import logobag from "@/assets/logobag.svg";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/")({ 
   component: Home,
+  head: () => ({
+    meta: [
+      { name: "title", content: "Bag Corner — Jasa Perbaikan Tas & Koper Ponorogo" },
+      { name: "description", content: "Jasa perbaikan tas dan koper profesional di Ponorogo. Ganti roda, resleting, kunci, troly koper. Layanan berkualitas dengan harga terjangkau." },
+      { name: "og:title", content: "Bag Corner — Jasa Perbaikan Tas & Koper Ponorogo" },
+      { name: "og:description", content: "Layanan perbaikan tas dan koper profesional di Ponorogo. Ganti roda, resleting, kunci koper dengan cepat dan terpercaya." },
+    ],
+  }),
 });
 
 const WA_NUMBER = "6281774977770";
 const waLink = (product: string) =>
   `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(`Halo Bag Corner, saya tertarik dengan ${product}. Mohon info lebih lanjut.`)}`;
 
-// Link Google Drive untuk Koleksi
-const GDRIVE_KOLEKSI_LINK = "https://drive.google.com/drive/folders/1eA7n8PO9nZLzdtiJSHogCSr5rnwdt8Pi?usp=sharing";
+// Data layanan dengan kata kunci SEO
+const SERVICES = [
+  {
+    id: "1",
+    name: "Perbaikan Resleting Tas",
+    description: "Perbaikan dan penggantian resleting tas yang rusak atau macet",
+    icon: "🪝",
+  },
+  {
+    id: "2",
+    name: "Perbaikan Aksesoris Tas",
+    description: "Perbaikan tali, handle, dan aksesori tas lainnya",
+    icon: "🎀",
+  },
+  {
+    id: "3",
+    name: "Ganti Roda Koper",
+    description: "Penggantian roda koper yang aus atau rusak dengan roda berkualitas",
+    icon: "🛞",
+  },
+  {
+    id: "4",
+    name: "Perbaikan/Ganti Troly Koper",
+    description: "Perbaikan dan penggantian troly (handle) koper yang bermasalah",
+    icon: "🔧",
+  },
+  {
+    id: "5",
+    name: "Ganti Kunci Koper",
+    description: "Penggantian kunci koper yang hilang atau rusak",
+    icon: "🔐",
+  },
+  {
+    id: "6",
+    name: "Ganti Kepala Resleting Koper",
+    description: "Penggantian kepala/slider resleting koper",
+    icon: "⚙️",
+  },
+];
+
+// Google Maps embed link
+const GOOGLE_MAPS_LINK = "https://share.google/FeQb5xKVX8ssLpi0v";
+const GOOGLE_MAPS_EMBED = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.0829426847435!2d111.46130091531832!3d-7.8738298940899175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78c1a1a1a1a1a1%3A0x1a1a1a1a1a1a1a1a!2sBag%20Corner%20Ponorogo!5e0!3m2!1sid!2sid!4v1234567890";
 
 const carouselItems = [
   { id: "1", name: "Ransel Sunrise", color: "Kuning", tag: "Best Seller", tagColor: "bg-amber-500/20 text-amber-300 border-amber-500/20", image: bagYellow },
@@ -53,7 +102,7 @@ function Home() {
           animate={false}
         />
       </div>
-      
+
       <div className="relative z-10">
         {/* Header */}
         <header className="sticky top-0 z-50 max-w-7xl mx-auto px-6 lg:px-10 pt-6 lg:pt-8 pb-4 flex items-center justify-between bg-transparent backdrop-blur-sm">
@@ -62,10 +111,8 @@ function Home() {
             <span>Bag Corner</span>
           </Link>
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
-            {/* Menu Belanja dihapus */}
+            <a href="#layanan" className="hover:text-primary transition">LAYANAN</a>
             <Link to="/tentang" className="hover:text-primary transition">TENTANG</Link>
-            {/* Menu Koleksi diarahkan ke Google Drive */}
-            <a href={GDRIVE_KOLEKSI_LINK} target="_blank" rel="noreferrer" className="hover:text-primary transition">KOLEKSI</a>
             <Link to="/payment-info" className="hover:text-primary transition">INFO-PAYMENT</Link>
             <a href="#kontak" className="hover:text-primary transition">KONTAK</a>
           </nav>
@@ -75,6 +122,7 @@ function Home() {
           </button>
         </header>
 
+        {/* Hero Section */}
         <section className="max-w-7xl mx-auto px-6 lg:px-10 pt-10 lg:pt-16 grid lg:grid-cols-2 gap-10 items-center">
           <div key={animationKey} className="flex flex-col gap-0">
             <VapourTextEffect
@@ -86,17 +134,16 @@ function Home() {
               className="w-full max-w-lg h-[100px] flex items-start justify-start pt-4 pb-8 !text-white [text-shadow:0_0_10px_#fff,0_0_20px_#fff]"
             />
             <p className="mt-6 text-base lg:text-lg text-muted-foreground max-w-md leading-relaxed">
-              Toko Tas Bag Corner Hadir dengan berbagai pilihan gaya lifestyle tas-tas pilihan 
-              dengan kwalitas terbaik siap menemani hari-harimu.
+              Jasa perbaikan tas dan koper profesional di Ponorogo. Kami menyediakan layanan perbaikan resleting, ganti roda koper, dan berbagai layanan perbaikan tas dengan kualitas terbaik.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a
-                href={waLink("koleksi Bag Corner")}
+                href={waLink("layanan perbaikan tas dan koper")}
                 target="_blank"
                 rel="noreferrer"
                 className="group inline-flex items-center gap-2 pl-6 pr-2 py-2 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-95 transition"
               >
-                Pesan via WhatsApp
+                Konsultasi Gratis via WhatsApp
                 <span className="w-9 h-9 rounded-full bg-white/20 grid place-items-center group-hover:translate-x-0.5 transition">
                   <ArrowRight className="w-4 h-4" />
                 </span>
@@ -105,7 +152,7 @@ function Home() {
                 <span className="w-9 h-9 rounded-full border border-foreground/80 grid place-items-center">
                   <Play className="w-3.5 h-3.5 fill-current" />
                 </span>
-                Putar Video
+                Lihat Promo
               </button>
             </div>
           </div>
@@ -118,6 +165,46 @@ function Home() {
           </div>
         </section>
 
+        {/* Layanan Section - SEO IMPROVED */}
+        <section id="layanan" className="max-w-7xl mx-auto px-6 lg:px-10 mt-16 lg:mt-24 pb-16">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-border bg-secondary/50 backdrop-blur-sm mb-4">
+              <div className="w-1 h-1 rounded-full bg-primary animate-pulse" />
+              <span className="text-[10px] font-medium text-muted-foreground tracking-widest uppercase">
+                Layanan Profesional
+              </span>
+            </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold mb-4 tracking-tight">
+              <span className="bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent bg-[length:200%_auto] animate-[shimmer_4s_ease-in-out_infinite]">
+                Jasa Perbaikan Tas & Koper
+              </span>
+            </h2>
+            <p className="text-muted-foreground text-base max-w-2xl mx-auto leading-relaxed">
+              Kami menyediakan berbagai layanan perbaikan tas dan koper dengan teknologi terkini dan pengalaman melayani pelanggan di Ponorogo dan sekitarnya.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {SERVICES.map((service) => (
+              <div key={service.id} className="p-6 rounded-2xl bg-secondary/30 border border-border/40 backdrop-blur-sm hover:border-primary/50 transition-all duration-300 hover:shadow-lg">
+                <div className="text-4xl mb-3">{service.icon}</div>
+                <h3 className="text-xl font-semibold mb-2">{service.name}</h3>
+                <p className="text-sm text-muted-foreground mb-4">{service.description}</p>
+                <a
+                  href={waLink(service.name)}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition font-medium"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  Tanya Harga
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Koleksi Section */}
         <section id="koleksi" className="max-w-7xl mx-auto px-6 lg:px-10 mt-16 lg:mt-24 pb-16">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
             {/* Left Column — Carousel (30%) */}
@@ -251,7 +338,7 @@ function Home() {
                   href={waLink("Ransel Bag Corner")}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-all duration-200"
                 >
                   <MessageCircle className="w-4 h-4" />
                   Tulis Ulasan Kamu
@@ -261,30 +348,162 @@ function Home() {
           </div>
         </section>
 
-        <footer id="kontak" className="border-t bg-background text-foreground mt-10">
+        {/* Google Maps & Lokasi Section - BARU */}
+        <section id="kontak" className="max-w-7xl mx-auto px-6 lg:px-10 mt-16 lg:mt-24 pb-16">
+          <div className="grid lg:grid-cols-2 gap-10 items-start">
+            {/* Maps Embed */}
+            <div className="w-full">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-border bg-secondary/50 backdrop-blur-sm mb-4">
+                <div className="w-1 h-1 rounded-full bg-primary animate-pulse" />
+                <span className="text-[10px] font-medium text-muted-foreground tracking-widest uppercase">
+                  Lokasi Kami
+                </span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-display font-semibold mb-6 tracking-tight">
+                Kunjungi Kami Langsung
+              </h2>
+              
+              <div className="w-full h-[400px] rounded-2xl overflow-hidden border border-border/40 mb-6 shadow-lg">
+                <iframe
+                  src={GOOGLE_MAPS_EMBED}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Lokasi Bag Corner di Google Maps"
+                ></iframe>
+              </div>
+              
+              <a
+                href={GOOGLE_MAPS_LINK}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/20 border border-primary/50 text-primary hover:bg-primary/30 transition font-medium"
+              >
+                <MapPin className="w-4 h-4" />
+                Buka di Google Maps
+              </a>
+            </div>
+
+            {/* Kontak Info */}
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-border bg-secondary/50 backdrop-blur-sm mb-4">
+                <div className="w-1 h-1 rounded-full bg-primary animate-pulse" />
+                <span className="text-[10px] font-medium text-muted-foreground tracking-widest uppercase">
+                  Hubungi Kami
+                </span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-display font-semibold tracking-tight">
+                Informasi Kontak
+              </h2>
+
+              <div className="space-y-4">
+                {/* Alamat Lengkap */}
+                <div className="p-6 rounded-2xl bg-secondary/30 border border-border/40 backdrop-blur-sm hover:border-primary/50 transition-all">
+                  <div className="flex items-start gap-4">
+                    <MapPin className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="font-semibold text-lg mb-2">Alamat Toko</h3>
+                      <p className="text-muted-foreground text-sm">
+                        Jalan Ponorogo<br />
+                        Kelurahan Ponorogo<br />
+                        Kecamatan Ponorogo<br />
+                        Kota Ponorogo, Jawa Timur 63412<br />
+                        Indonesia
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Telepon */}
+                <div className="p-6 rounded-2xl bg-secondary/30 border border-border/40 backdrop-blur-sm hover:border-primary/50 transition-all">
+                  <div className="flex items-start gap-4">
+                    <Phone className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="font-semibold text-lg mb-2">Hubungi via WhatsApp</h3>
+                      <a 
+                        href={waLink("informasi")}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-primary hover:underline text-sm font-medium"
+                      >
+                        +62 817-749-7770
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Jam Operasional */}
+                <div className="p-6 rounded-2xl bg-secondary/30 border border-border/40 backdrop-blur-sm hover:border-primary/50 transition-all">
+                  <div className="flex items-start gap-4">
+                    <Clock className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="font-semibold text-lg mb-2">Jam Operasional</h3>
+                      <p className="text-muted-foreground text-sm">
+                        Senin - Jumat: 08:00 - 17:00<br />
+                        Sabtu: 08:00 - 14:00<br />
+                        Minggu: Libur
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Media Sosial */}
+                <div className="p-6 rounded-2xl bg-secondary/30 border border-border/40 backdrop-blur-sm hover:border-primary/50 transition-all">
+                  <h3 className="font-semibold text-lg mb-3">Ikuti Kami</h3>
+                  <div className="flex gap-3">
+                    <a 
+                      href="https://www.tiktok.com/@bagcornerponorogo"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-4 py-2 rounded-full bg-primary/20 text-primary hover:bg-primary/30 transition text-sm font-medium"
+                    >
+                      TikTok
+                    </a>
+                    <a 
+                      href="https://www.instagram.com/bagcorner"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-4 py-2 rounded-full bg-primary/20 text-primary hover:bg-primary/30 transition text-sm font-medium"
+                    >
+                      Instagram
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="border-t bg-background text-foreground mt-10">
           <div className="max-w-7xl mx-auto px-6 lg:px-10 py-10 grid md:grid-cols-3 gap-8">
             <div>
               <div className="text-2xl font-display font-semibold">Bag Corner<span className="text-primary">.</span></div>
               <p className="mt-3 text-sm text-muted-foreground max-w-xs">
-                Tas premium untuk gaya harianmu. Pesan cepat lewat WhatsApp, dikirim ke seluruh Indonesia.
+                Jasa perbaikan tas dan koper profesional di Ponorogo. Layanan berkualitas dengan harga terjangkau untuk semua kebutuhan Anda.
               </p>
             </div>
             <div className="text-sm">
               <div className="font-semibold mb-3">Menu</div>
               <ul className="space-y-2 text-muted-foreground">
-                {/* Menu Belanja dihapus di footer */}
+                <li><a href="#layanan" className="hover:text-foreground transition">Layanan</a></li>
                 <li><Link to="/tentang" className="hover:text-foreground transition">Tentang</Link></li>
-                {/* Menu Koleksi diarahkan ke Google Drive di footer */}
-                <li><a href={GDRIVE_KOLEKSI_LINK} target="_blank" rel="noreferrer" className="hover:text-foreground transition">Koleksi</a></li>
                 <li><Link to="/payment-info" className="hover:text-foreground transition">Info-Payment</Link></li>
               </ul>
             </div>
             <div className="text-sm">
               <div className="font-semibold mb-3">Kontak</div>
               <ul className="space-y-2 text-muted-foreground">
-                <li>WhatsApp: +62 8177-49-7777-0</li>
-                <li>Tiktok: @bagcornerponorogo</li>
-                <li>Ponorogo, Indonesia</li>
+                <li>
+                  <a href={waLink("informasi")} target="_blank" rel="noreferrer" className="hover:text-foreground transition">
+                    WhatsApp: +62 817-749-7770
+                  </a>
+                </li>
+                <li><a href="https://www.tiktok.com/@bagcornerponorogo" target="_blank" rel="noreferrer" className="hover:text-foreground transition">TikTok: @bagcornerponorogo</a></li>
+                <li>Ponorogo, Jawa Timur, Indonesia</li>
               </ul>
             </div>
           </div>
