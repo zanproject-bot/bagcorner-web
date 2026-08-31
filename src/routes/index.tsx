@@ -56,7 +56,7 @@ const SERVICES = [
   {
     id: "5",
     name: "Ganti Kunci Koper",
-    description: "Penggantian kunci koper yang hilang , rusak ,  lupa pin",
+    description: "Penggantian kunci koper yang hilang , rusak , reset pin",
     icon: "🔐",
   },
   {
